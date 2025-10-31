@@ -1,0 +1,30 @@
+.nav-bar{
+    /* width: 100%; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-logo{
+    width: 150px;
+    height: 70px;
+    /* border: 1px solid white; */
+    display: flex;
+    margin-left: 20px;
+    justify-content: center;
+    align-items: center;
+}
+.nav-item{
+    font-size: 20px;
+    /* padding-left: 20px; */
+    display: flex;
+    /* border: 1px solid white; */
+    justify-content: space-between;
+    align-items: center;
+}
+li{
+    padding: 10px;
+}
+li:hover{
+   background-color: gray;
+   border-radius: 10px;
+}

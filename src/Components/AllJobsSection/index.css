@@ -1,0 +1,38 @@
+.job-list{
+    width: 90%;
+    background-color: rgba(7, 7, 7, 0.842);
+    border-radius: 10px;
+    margin: 15px;
+    color: white;
+    padding: 15px;
+    list-style: none;
+}
+.job-list:hover{
+    background-color: rgb(29, 28, 28);
+}
+.job-card{
+    width: 100%;
+    background-color: rgba(7, 7, 7, 0.842);
+    border-radius: 10px;
+    margin: 15px;
+    color: white;
+    padding: 15px;
+}
+.card-top-sec{
+    display: flex;
+    
+}
+.card-bottom-sec{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.allJobsLink{
+    text-decoration: none;
+    color: inherit;
+}
+.allJobsLink:hover{
+    text-decoration: none;
+    color: inherit;
+}
+
