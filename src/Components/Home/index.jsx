@@ -13,6 +13,7 @@ const Home = ()=>{
         <>
         
          <Header/>
+         <br/><br/><br/><br/>
 <div className='home-cont'>
   <div className='home-left'>
     <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel"data-interval="3000"

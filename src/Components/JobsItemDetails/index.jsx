@@ -57,6 +57,7 @@ const JobsItemDetails =()=>{
     return(
         <>
          <Header/>
+         <br/><br/><br/><br/>
         <div className='jobDetails-conta'>
           
           <div className='subJob-Conta'>

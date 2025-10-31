@@ -1,21 +1,94 @@
-.similar-job-card{
-    background-color: rgba(7, 7, 7, 0.767);
-    border-radius: 10px;
-    padding: 15px;
-    width:400px;
-    margin: 10px;
-    transition: transform 0.2s;
+.similar-job-card {
+  background: linear-gradient(145deg, rgba(15, 15, 15, 0.9), rgba(25, 25, 25, 0.8));
+  border-radius: 15px;
+  padding: 20px;
+  width: 100%;
+  max-width: 380px;
+  margin: 15px auto;
+  color: #fff;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
+
 .similar-job-card:hover {
   transform: translateY(-5px);
-  background-color: rgba(0, 0, 0, 0.61);
+  background: linear-gradient(145deg, rgba(25, 25, 25, 0.95), rgba(40, 40, 40, 0.8));
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
 }
+
 .similar-job-link {
   text-decoration: none;
   color: inherit;
 }
-.similar-job-link:hover{
 
-    text-decoration: none;
+.similar-job-link:hover {
+  text-decoration: none;
   color: inherit;
+}
+
+/* Job title and rating */
+.similar-job-card h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.similar-job-card h5 {
+  font-size: 1rem;
+  color: gold;
+  display: flex;
+  align-items: center;
+}
+
+/* Company logo */
+.similar-job-card img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  margin-right: 15px;
+}
+
+/* Description */
+.similar-job-card p {
+  color: #dcdcdc;
+  font-size: 0.95rem;
+  text-align: justify;
+  margin-bottom: 10px;
+}
+
+/* Icons section */
+.similar-job-card span {
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  color: #bfbfbf;
+  margin-right: 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .similar-job-card {
+    max-width: 90%;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  .similar-job-card {
+    padding: 12px;
+    border-radius: 12px;
+  }
+  .similar-job-card h4 {
+    font-size: 1rem;
+  }
+  .similar-job-card img {
+    width: 55px;
+    height: 55px;
+  }
+  .similar-job-card p {
+    font-size: 0.85rem;
+  }
+  .similar-job-card span {
+    font-size: 0.8rem;
+  }
 }
