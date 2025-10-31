@@ -1,54 +1,150 @@
-.job-conta{
-    width: 100%;
-    /* height: 90vh; */
-    display: flex;
-    background-color: rgb(26, 23, 23);
-    
-}
-.left-cont{
-    width: 30%;
-    /* height: 100%; */
-    background-color: rgb(29, 28, 28);
-}
-.right-cont{
-    width: 70%;
-    /* height: 100%; */
-    background-color: rgb(66, 65, 65);
-}
-@media (min-width:375px)and (max-width:667px) {
-.job-conta{
-    width: 100%;
-    height: 90vh;
-    background-color: rgb(26, 23, 23);
-    display: flex;
-    flex-direction: column;
-}
-.left-cont{
-    width: 100%;
-    /* height: 10%; */
-    background-color: rgb(29, 28, 28);
-}
-.right-cont{
-    width: 100%;
-    /* height: 90%; */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: rgb(66, 65, 65);
+/* === Main Job Container === */
+.job-conta {
+  width: 100%;
+  min-height: 90vh;
+  display: flex;
+  background: linear-gradient(135deg, #1e1e1e, #2d2d2d);
+  color: white;
+  overflow-x: hidden;
+  padding: 10px;
+  gap: 15px;
 }
 
+/* === Left Filter Section === */
+.left-cont {
+  width: 28%;
+  background: rgba(35, 35, 35, 0.9);
+  border-radius: 16px;
+  padding: 15px;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.1);
+  backdrop-filter: blur(4px);
+  transition: all 0.3s ease-in-out;
 }
+
+.left-cont:hover {
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+/* === Right Jobs Section === */
+.right-cont {
+  flex: 1;
+  background: rgba(50, 50, 50, 0.85);
+  border-radius: 16px;
+  padding: 20px;
+  overflow-y: auto;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+  scrollbar-width: thin;
+  scrollbar-color: #888 #333;
+}
+
+/* Scrollbar for WebKit browsers */
+.right-cont::-webkit-scrollbar {
+  width: 8px;
+}
+.right-cont::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+.right-cont::-webkit-scrollbar-thumb:hover {
+  background: #aaa;
+}
+
+/* === Job Search Input === */
+input.form-control {
+  border: 1px solid #555;
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-size: 15px;
+  background-color: rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+input.form-control:focus {
+  border-color: #00bcd4;
+  box-shadow: 0 0 8px rgba(0, 188, 212, 0.5);
+}
+
+/* === Loader Section === */
 .loader-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 70vh; /* Adjust as needed */
+  height: 60vh;
   width: 100%;
 }
 
 .spinner-border {
-  width: 4rem !important;
-  height: 4rem !important;
-  color: #00bcd4; /* light cyan spinner */
+  width: 3rem !important;
+  height: 3rem !important;
+  color: #00bcd4;
+}
+
+/* === No Jobs Message === */
+.Nojobs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+  color: #ccc;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+}
+
+/* === Responsive Design Fix for Filter Section === */
+@media (max-width: 992px) {
+  .job-conta {
+    flex-direction: column;
+    padding: 10px;
+    overflow-x: hidden;
+  }
+
+  .left-cont {
+    width: 100%;
+    order: 1;
+    margin-bottom: 12px;
+    background: rgba(40, 40, 40, 0.95);
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.15);
+    padding: 15px;
+    display: block; /* 👈 ensure visible */
+    position: relative; /* fix collapsing issue */
+    z-index: 5;
+  }
+
+  .right-cont {
+    width: 100%;
+    order: 2;
+    padding: 15px;
+    border-radius: 12px;
+    background: rgba(55, 55, 55, 0.9);
+    overflow-y: visible;
+  }
+}
+
+/* === For smaller screens (phones <600px) === */
+@media (max-width: 600px) {
+  .left-cont {
+    padding: 12px;
+    background: rgba(50, 50, 50, 0.95);
+  }
+
+  .job-conta {
+    padding: 5px;
+  }
+
+  .right-cont {
+    padding: 10px;
+  }
+}
+
+
+/* === Search Bar Placeholder White === */
+.search-input::placeholder {
+  color: rgba(255, 255, 255, 0.8); /* Light white */
+  opacity: 1; /* Safari fix */
+}
+
+.search-input:focus::placeholder {
+  color: rgba(255, 255, 255, 0.6); /* Slightly dim when typing */
 }

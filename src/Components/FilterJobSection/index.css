@@ -1,35 +1,168 @@
-.userProfile-card{
-    width: 90%;
-    /* height: 20px; */
-    border-radius: 10px;
-    margin: 15px;
-    padding: 10px;
-    padding-left: 15px;
-   /* border: 1px solid white; */
-background: linear-gradient(135deg, #283E51, #485563);
+.filter-toggle-btn {
+  display: none;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 10px;
 }
-.emp-cont{
-    width: 90%;
-    /* border: 1px solid white; */
-    padding: 10px;
-    border-radius: 10px;
-    color: white;
-    margin: 15px;
-    background-color: rgba(0, 0, 0, 0.308);
+
+.filter-toggle-btn button {
+  background: linear-gradient(90deg, #007bff, #00bcd4);
+  border: none;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 10px 20px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 188, 212, 0.3);
+  transition: all 0.3s ease;
 }
-.salary-cont{
-    width:90%;
-    padding: 10px;
-    margin: 15px;
-    border-radius: 10px;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.308);
-    /* border: 1px solid white; */
+
+.filter-toggle-btn button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0, 188, 212, 0.5);
 }
-.userLoader{
-     display: flex;
+
+/* 🌟 Sidebar Filter Section */
+.filter-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  width: 100%;
+  transition: transform 0.4s ease-in-out;
+}
+
+/* 🌟 Profile Card */
+.userProfile-card {
+  width: 90%;
+  text-align: center;
+  border-radius: 12px;
+  padding: 25px 15px;
+  background: linear-gradient(135deg, #283E51, #485563);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.userProfile-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
+}
+
+.profile-img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.userProfile-card h3 {
+  font-size: 1.2rem;
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.userProfile-card p {
+  font-size: 0.95rem;
+  color: #e0e0e0;
+  line-height: 1.4;
+}
+
+/* 💼 Filter Boxes */
+.emp-cont,
+.salary-cont {
+  width: 90%;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 15px 0;
+  background: rgba(15, 15, 15, 0.55);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.emp-cont:hover,
+.salary-cont:hover {
+  background: rgba(40, 40, 40, 0.6);
+  transform: translateY(-3px);
+}
+
+.emp-cont h3,
+.salary-cont h3 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #80bfff;
+}
+
+/* Checkbox & Radio Styling */
+.filter-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.filter-list li {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.filter-list input {
+  margin-right: 10px;
+  accent-color: #00bcd4;
+}
+
+.filter-list label {
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.filter-list label:hover {
+  color: #4dabf7;
+}
+
+/* Loader */
+.userLoader {
+  display: flex;
   justify-content: center;
   align-items: center;
-  height: 30vh; /* Adjust as needed */
+  height: 30vh;
   width: 100%;
+}
+
+/* 📱 Responsive: Mobile view */
+@media (max-width: 768px) {
+  .filter-toggle-btn {
+    display: block;
+  }
+
+  .filter-section {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 80%;
+    background: rgba(20, 20, 20, 0.95);
+    transform: translateX(-100%);
+    z-index: 999;
+    overflow-y: auto;
+    padding-top: 60px;
+  }
+
+  .filter-section.show {
+    transform: translateX(0);
+  }
+
+  .userProfile-card,
+  .emp-cont,
+  .salary-cont {
+    width: 90%;
+  }
 }

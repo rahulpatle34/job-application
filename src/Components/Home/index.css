@@ -1,61 +1,176 @@
-.home-cont{
-    width: 100%;
-    height: 87vh;
-    padding: 15px;
-    background-color: rgba(0, 0, 0, 0.76);
-    display: flex;
-    /* flex-direction: column; */
-    justify-content: center;
-    align-items: center;
-    color: white;
-    
+/* ---------- RESET ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
-.home-img{
-    border-radius: 10px;
+
+/* ---------- HOME CONTAINER ---------- */
+.home-cont {
+  width: 100%;
+  min-height: 87vh;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(25, 25, 25, 0.85));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  gap: 30px;
+  flex-wrap: wrap;
+  overflow: hidden;
 }
-.home-left{
-    width: 40%;
-    border-radius: 10px;
-    margin-right:10px;
-    /* border: 1px solid white; */
+
+/* ---------- LEFT (CAROUSEL) ---------- */
+.home-left {
+  width: 45%;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.home-right{
-    width: 40%;
-    margin-left: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-     /* border: 1px solid white; */
+
+.home-left:hover {
+  transform: scale(1.02);
+  box-shadow: 0px 10px 35px rgba(0, 0, 0, 0.8);
 }
-.home-head{
-    font-family: "Poppins",sans-serif;
-    font-size: 60px;
-    text-transform: uppercase;
-    text-align: center;
-    background: linear-gradient(to right,#fc72ff,#8f68ff,#487bff,#8f68ff,#fc72ff);
-    background-size: 200%;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: animate-gradient 2.5s linear infinite;
+
+.home-img {
+  border-radius: 15px;
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+/* ---------- RIGHT (TEXT SECTION) ---------- */
+.home-right {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 15px;
+  padding: 15px;
+}
+
+.home-head {
+  font-size: 60px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  background: linear-gradient(to right, #fc72ff, #8f68ff, #487bff, #8f68ff, #fc72ff);
+  background-size: 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: animate-gradient 2.5s linear infinite;
 }
 
 @keyframes animate-gradient {
-    to{
-        background-position: 200%;
-    }
+  to {
+    background-position: 200%;
+  }
 }
 
-@media (min-width:375px)and (max-width:768px) {
-    .home-cont{
-        height: 100vh;
-        flex-direction: column;
-    }
-    .home-left{
-        width: 100%;
-    }
-    .home-right{
-        width: 100%;
-    }
+.home-right p {
+  font-size: 17px;
+  line-height: 1.6;
+  color: #e8e8e8;
+  max-width: 400px;
+}
+
+.home-right h6 {
+  color: #00c4ff;
+  letter-spacing: 1px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+/* ---------- BUTTON ---------- */
+.home-right .btn {
+  background: linear-gradient(135deg, #007bff, #00c4ff);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  padding: 10px 25px;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0px 4px 20px rgba(0, 188, 212, 0.3);
+}
+
+.home-right .btn:hover {
+  background: linear-gradient(135deg, #00c4ff, #007bff);
+  transform: scale(1.05);
+  box-shadow: 0px 6px 25px rgba(0, 188, 212, 0.6);
+}
+
+/* ---------- RESPONSIVE (TABLET) ---------- */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .home-cont {
+    flex-direction: column;
+    text-align: center;
+    height: auto;
+    padding: 40px 30px;
+  }
+
+  .home-left {
+    width: 80%;
+  }
+
+  .home-img {
+    height: 350px;
+  }
+
+  .home-right {
+    width: 80%;
+    margin-top: 20px;
+  }
+
+  .home-head {
+    font-size: 45px;
+  }
+
+  .home-right p {
+    font-size: 16px;
+  }
+}
+
+/* ---------- RESPONSIVE (MOBILE) ---------- */
+@media (max-width: 767px) {
+  .home-cont {
+    flex-direction: column;
+    padding: 25px 15px;
+    text-align: center;
+  }
+
+  .home-left {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .home-img {
+    height: 250px;
+  }
+
+  .home-right {
+    width: 100%;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .home-head {
+    font-size: 32px;
+    line-height: 1.2;
+  }
+
+  .home-right p {
+    font-size: 14px;
+  }
+
+  .home-right .btn {
+    font-size: 14px;
+    padding: 8px 20px;
+  }
 }
