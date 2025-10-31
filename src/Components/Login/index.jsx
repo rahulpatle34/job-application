@@ -78,9 +78,9 @@ const Login = ()=>{
     <label htmlFor="exampleInputPassword1">PASSWORD</label><br/>
     <input onChange={(e)=>{setValues({...allValues,password:e.target.value})}} type="password" className="mt-2 w-100 input-box border-bottom" id="exampleInputPassword1"/>
   </div>
-  <button type="submit" style={{fontSize:"14px"}} className="btn btn-primary form-control mt-2 ">Login</button>
+  <button type="submit" style={{fontSize:"14px"}} className="btn btn-primary form-control mt-2 login-btn">Login</button>
   <br/><br/>
-  <p style={{color:"red"}}>{allValues.errorMsg}</p>
+  <p className='errmsg' style={{color:"red"}}>{allValues.errorMsg}</p>
 </form>
 
     </div>    

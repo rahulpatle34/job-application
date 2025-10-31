@@ -1,9 +1,12 @@
+/* ---------- RESET ---------- */
 * {
-    margin: 0%;
-    padding: 0%;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
 }
 
+/* ---------- MAIN CONTAINER ---------- */
 .login-conta {
     width: 100%;
     height: 100vh;
@@ -11,83 +14,146 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-image: url('../../images/login-bg2.jpg');
-    background-size: cover;
+    background: linear-gradient(135deg, rgba(20, 20, 20, 0.85), rgba(30, 30, 30, 0.85)),
+                url('../../images/login-bg2.jpg') center/cover no-repeat;
     color: white;
+    padding: 20px;
 }
 
+/* ---------- FORM CONTAINER ---------- */
 .form-cont {
     width: 30%;
-    font-size: 14px;
-    background-color: rgba(37, 37, 37, 0.534);
-    color: white;
-    border-radius: 15px;
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(10px);
-    box-shadow: 11px 12px 35px -3px rgba(22, 22, 22, 0.466);
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0px 8px 40px rgba(0, 0, 0, 0.5);
+    padding: 40px 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.3s ease;
 }
 
-@media (min-width:768px) and (max-width: 1024px) {
-
-    .form-cont {
-        width: 60%;
-        font-size: 20px;
-        border: 1px solid gray;
-    }
-
-    .logo {
-        width: 300px;
-        height: 160px;
-        margin-left: 50px;
-        /* border: 1px solid gray;  */
-
-    }
-}
-    @media (min-width:375px) and (max-width:667px) {
-
-     .form-cont {
-        width: 80%;
-        font-size: 12px;
-
-    }
-    .logo{
-        margin-left: -25px;
-    }
-
-   
+.form-cont:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 12px 45px rgba(0, 0, 0, 0.6);
 }
 
-
-.input-box {
-    background-color: transparent;
-    outline: transparent;
-    border: transparent;
-    color: white;
-    border-bottom: 1px solid gray;
-}
-
-.input-box:focus {
-    background-color: transparent;
-    outline: transparent;
-    color: white;
-    border: transparent;
-
-}
-
+/* ---------- LOGO ---------- */
 .logo {
-    width: 250px;
-    height: 90px;
-    /* border: 1px solid gray; */
-    position: relative;
-    top: -20px;
-    left: 7px;
-    margin-bottom: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 25px;
 }
 
 .logo-img {
+    width: 180px;
+    height: auto;
+    filter: drop-shadow(0px 2px 8px rgba(255, 255, 255, 0.4));
+    transition: all 0.4s ease;
+}
+
+.logo-img:hover {
+    transform: scale(1.05);
+}
+
+/* ---------- LABEL & INPUTS ---------- */
+.form-group {
     width: 100%;
-    filter: brightness(0.9);
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    color: #e0e0e0;
+}
+
+.input-box {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    color: white;
+    width: 100%;
+    padding: 10px 6px;
+    font-size: 15px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-box:focus {
+    outline: none;
+    border-bottom: 1px solid #00bcd4;
+    box-shadow: 0 2px 6px rgba(0, 188, 212, 0.5);
+}
+
+/* ---------- BUTTON ---------- */
+.login-btn {
+    background: linear-gradient(135deg, #007bff, #00bcd4);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 10px 0;
+    width: 100%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0px 4px 15px rgba(0, 188, 212, 0.3);
+}
+
+.login-btn:hover {
+    background: linear-gradient(135deg, #00bcd4, #007bff);
+    transform: scale(1.02);
+    box-shadow: 0px 6px 20px rgba(0, 188, 212, 0.6);
+}
+
+/* ---------- ERROR MESSAGE ---------- */
+.errmsg {
+    margin-top: 10px;
+    color: #ff4d4d;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+/* ---------- RESPONSIVE (TABLET) ---------- */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .form-cont {
+        width: 55%;
+        padding: 35px 25px;
+    }
+
+    .logo-img {
+        width: 160px;
+    }
+
+    .login-btn {
+        font-size: 14px;
+    }
+}
+
+/* ---------- RESPONSIVE (MOBILE) ---------- */
+@media (max-width: 767px) {
+    .form-cont {
+        width: 90%;
+        padding: 25px 20px;
+        border-radius: 15px;
+    }
+
+    .logo-img {
+        width: 140px;
+    }
+
+    .input-box {
+        font-size: 14px;
+        padding: 8px 4px;
+    }
+
+    .login-btn {
+        font-size: 14px;
+        padding: 9px 0;
+    }
 }
